@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MALLONN - Kontakt</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="img/Favicon/Favicon_Web.png" />
+</head>
+<body>
+      <header class="main-header kontakt-header" id="siteHeader">
+        <div class="hero-overlay"></div>
+        <div class="nav-inner">
+          <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
+          <nav>
+            <ul class="nav-links">
+              <li><a href="index.html" class="nav-btn">Startseite</a></li>
+              <li><a href="leistungen.html" class="nav-btn">Leistungen</a></li>
+              <li><a href="uber-uns.html" class="nav-btn">Über uns</a></li>
+              <li><a href="kontakt.html" class="nav-btn active">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="hero-content hero-left">
+          <h1>Nehmen Sie Kontakt zu uns auf</h1>
+          <p>Wir freuen uns auf Ihre Nachricht.</p>
+        </div>
+      </header>
+
+      <script src="js/main.js"></script>
+
+      <main class="kontakt-main">
+        <div class="kontakt-wrapper">
+      
+          <!-- Kontaktformular -->
+          <div class="kontakt-form-container">
+            <form id="kontaktForm" method="POST" action="sendmail.php" novalidate>
+              <h2>Kontaktformular</h2>
+      
+              <div class="form-row">
+                <input type="text" name="vorname" placeholder="Vorname *" required />
+                 <input type="text" name="nachname" placeholder="Nachname *" required />
+              </div>
+      
+              <div class="form-row">
+                <input type="email" name="email" placeholder="E-Mail *" required />
+                <input type="text" name="telefon" placeholder="Telefon *" required />
+              </div>
+      
+              <div class="form-row">
+                <input type="text" name="strasse" placeholder="Straße" />
+                <input type="text" name="hausnummer" placeholder="Hausnummer" />
+              </div>
+      
+              <div class="form-row">
+                <input type="text" name="plz" placeholder="PLZ *" required />
+                <input type="text" name="ort" placeholder="Ort" />
+              </div>
+      
+              <div class="form-row">
+                <textarea name="nachricht" placeholder="Kommentar oder Nachricht *" required></textarea>
+              </div>
+      
+              <div class="form-row checkbox-row">
+                <input type="checkbox" id="dsgvo" name="dsgvo" value="1" required />
+                <label for="dsgvo">
+                  Ich willige ein, dass diese Website meine übermittelten Informationen speichert, sodass meine Anfrage beantwortet werden kann.
+                  <br />
+                  Näheres über die gespeicherten Daten erfahren Sie unter
+                  <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>.
+                </label>
+              </div>
+      
+              <div class="form-row spam-row">
+                <label for="spam">Spamschutz * 7 + 5 =</label>
+                <input type="number" id="spam" name="spam" required />
+              </div>
+      
+              <button type="submit" class="btn weiter-button">Absenden</button>
+      
+              <!-- success / error feedback injected by JS -->
+              <p id="formMsg" class="form-msg" aria-live="polite"></p>
+            </form>
+          </div>
+      
+          <!-- Kontakt-Box -->
+          <div class="kontakt-box">
+            <h2>Kontakt</h2>
+            <p>
+              Mallonn Dachtechnik<br>
+              Hallermundstraße 1<br>
+              31832 Springe-Eldagsen
+            </p>
+            <div class="kontakt-icons-row">
+              <div class="kontakt-icon-item">
+                <img src="img/icons/anruf.png" alt="Telefon" />
+                <span>+49 (0)170 5781360</span>
+              </div>
+              <div class="kontakt-icon-item">
+                <img src="img/icons/email.png" alt="E-Mail" />
+                <span>info@dach-mallonn.de</span>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Karte -->
+          <div class="kontakt-map">
+            <iframe
+              src="https://www.google.com/maps?q=Hallermundstraße%201%2C%2031832%20Springe-Eldagsen&output=embed"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+      
+        </div>
+      </main>
+
+  <footer class="footer-gradient">
+    <div class="footer-content">
+      <div>
+        <strong>Dachtechnik Mallonn</strong><br>
+        Hallermundstraße 1<br>
+        31832 Springe-Eldagsen
+      </div>
+      <div>
+        +49 (0)170 5781360<br>
+        info@dach-mallonn.de
+      </div>
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Barrierefreiheit</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+

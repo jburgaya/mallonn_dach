@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MALLONN - Startseite</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="img/Favicon/Favicon_Web.png" />
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="main-header" id="siteHeader">
+        <div class="hero-overlay"></div>
+
+        <div class="nav-inner">
+          <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
+          <nav>
+            <ul class="nav-links">
+              <li><a href="index.html" class="nav-btn active">Startseite</a></li>
+              <li><a href="leistungen.html" class="nav-btn">Leistungen</a></li>
+              <li><a href="uber-uns.html" class="nav-btn">Über uns</a></li>
+              <li><a href="kontakt.html" class="nav-btn">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
+      
+        <div class="hero-content">
+          <h1>WIR BAUEN DACHER MIT WEIT BLICK</h1>
+          <p>Bei Dachtechnik Mallonn steht Qualität und Innovation im Mittelpunkt. Als Spezialisten für Flachdächer un Dachtechnik verbinden wir modernste Technologien mit traditionellem Handwerk. Ob flache Konstruktionen für die optimale Nutzung von Wohn- und Arbeitsräumen oder klassiche Dächer mit Ziegeln - unser Ziel ist es, jedes Projekt individuell und nachhaltig zu gestalten. Vertrauen Sie auf uns für Dachlösungen, die Langlebigkeit, Präzision und Ästhetik vereinen.</p>
+          <div class="hero-buttons">
+            <a href="leistungen.html" class="btn primary">Leistungen</a>
+            <a href="uber-uns.html" class="btn secondary">Über uns</a>
+          </div>
+        </div>
+      </header>
+      
+      <script src="js/main.js"></script>
+
+    <!-- Schnelleinstieg -->
+      <section class="quick-access">
+        <h2>Schnelleinstieg</h2>
+      
+        <div class="search-box">
+          <img src="img/icons/suchen.png" alt="Suchsymbol" id="searchButton" style="cursor: pointer;" />
+          <input type="text" id="quickSearch" placeholder="Suchbegriff eingeben" />
+        </div>
+      
+        <div class="tags-wrapper">
+          <p>Beliebte Themen:</p>
+          <div class="tags">
+            <a href="leistungen.html#flachdach">Flachdacharbeiten</a>
+            <a href="leistungen.html#abdichtungarbeiten">Abdichtungarbeiten</a>
+            <a href="leistungen.html#steildach">Steildacharbeiten</a>
+            <a href="leistungen.html#fassade">Fassadenarbeiten</a>
+            <a href="kontakt.html">Kontakt</a>
+          </div>
+        </div>
+      
+        <!-- Suchergebnisse -->
+        <div id="searchResults" class="tags-wrapper" style="display:none; margin-top: 2rem;">
+          <p>Suchergebnisse:</p>
+          <div id="resultsBox" style="background:white; border-radius:12px; padding:1rem; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+            <ul id="resultsList" style="list-style: none; padding: 0; margin: 0;"></ul>
+          </div>
+        </div>        
+      </section>
+      
+    <!-- Leistungen -->
+    <section class="services" data-aos="fade-up">
+      <div class="services-intro">
+        <h2>Unsere wichtigsten Leistungen für Sie im Überblick:</h2>
+        <p>
+          Wir bieten umfassende Leistungen rund ums Dach – von Flachdächern über klassische Ziegeldächer bis hin zu fachgerechter Dachsanierung.
+          Unsere Arbeiten verbinden Handwerkstradition mit modernen Materialien und Techniken.
+        </p>
+      </div>
+    
+    <div class="service-static-grid">
+      <div class="service-entry" data-aos="zoom-in">
+        <a href="leistungen.html#flachdach">
+          <img src="img/leistungen/flachdach_mock.jpeg" alt="Flachdach" />
+          <h3>Flachdach</h3>
+        </a>
+        <p>Ideal für moderne Architektur – energieeffizient und funktional.</p>
+      </div>
+    
+      <div class="service-entry" data-aos="zoom-in">
+        <a href="leistungen.html#ziegeldach">
+          <img src="img/leistungen/ziegeldach_mock.png" alt="Ziegeldach" />
+          <h3>Ziegeldach</h3>
+        </a>
+        <p>Klassischer Look mit langlebigem Schutz vor Witterung.</p>
+      </div>
+    
+      <div class="service-entry" data-aos="zoom-in">
+        <a href="leistungen.html#dachsanierung">
+          <img src="img/leistungen/gerust_mock.JPG" alt="Dachsanierung" />
+          <h3>Dachsanierung</h3>
+        </a>
+        <p>Erneuerung bestehender Dächer für optimale Sicherheit und Wertsteigerung.</p>
+      </div>
+    
+      <div class="service-entry" data-aos="zoom-in">
+        <a href="leistungen.html#bauklempnerei">
+          <img src="img/leistungen/bauklammern_mock.jpg" alt="Bauklempnerei" />
+          <h3>Bauklempnerei</h3>
+        </a>
+        <p>Metallarbeiten rund ums Dach – präzise und langlebig.</p>
+      </div>
+    
+      <div class="service-entry" data-aos="zoom-in">
+        <a href="leistungen.html#fassade">
+          <img src="img/leistungen/gaube_fassade_solar_mock.JPG" alt="Fassadenverkleidung" />
+          <h3>Fassadenverkleidung</h3>
+        </a>
+        <p>Ästhetische Fassaden mit Schutzfunktion – individuell gestaltet.</p>
+      </div>
+    
+      <div class="service-entry" data-aos="zoom-in">
+        <a href="leistungen.html#photovoltaik">
+          <img src="img/leistungen/pv_anlage_mock.png" alt="Photovoltaikanlage" />
+          <h3>Photovoltaikanlage</h3>
+        </a>
+        <p>Strom vom Dach – umweltfreundlich und kostensparend.</p>
+      </div>
+    </div>
+    
+    <div class="weiter-button-wrapper" data-aos="zoom-in">
+      <a href="leistungen.html" class="btn weiter-button">Weitere Leistungen</a>
+    </div>
+    </section>    
+      
+    <!-- Team -->
+    <section class="team-section two-column-team" data-aos="fade-up">
+      <div class="team-container">
+        <div class="team-text">
+          <h2>Über Dachtechnik Mallonn</h2>
+          <p>
+            Seit über 20 Jahren steht der Name <strong>Mallonn</strong> für solides Handwerk und zuverlässige Dachtechnik in Springe-Eldagsen und Umgebung.  
+            Gegründet als Familienunternehmen, verbindet Dachtechnik Mallonn heute Tradition mit technischem Fortschritt – und das mit Leidenschaft für jedes einzelne Projekt.  
+            Unsere Wurzeln liegen in der Region, unser Anspruch ist Qualität – Tag für Tag, Dach für Dach.
+          </p>
+        </div>
+    
+        <div class="team-grid">
+          <div class="team-member">
+            <a href="uber-uns.html">
+              <img src="img/team/meister.jpg" alt="Dachdeckermeister" />
+            </a>
+            <div class="member-info">
+              <h3>Felix Mallonn</h3>
+              <p>Dachdeckermeister</p>
+            </div>
+          </div>
+        
+          <div class="team-member">
+            <a href="uber-uns.html" class="member-photo-wrapper">
+              <img 
+                src="img/team/helfer.jpg" 
+                alt="Teammitglied" 
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+              <img 
+                class="fallback-photo" 
+                src="img/icons/person-svgrepo-com.svg" 
+                alt="Person Icon" 
+                style="display: none;"
+              />
+            </a>
+            <div class="member-info">
+              <h3>Marcel</h3>
+              <p>Projektleitung</p>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </section>
+      
+    <!-- Kontakt -->
+    <section class="kontakt kontakt-aligned">
+      <h2>Persönlich. Verlässlich. Erreichbar.</h2>
+      <p>
+        Der direkte Draht zu Dachtechnik Mallonn – wir sind für Sie da. Ob erste Fragen, konkrete Projektanfragen oder Terminvereinbarungen:  
+        Wir nehmen uns Zeit für Ihr Anliegen. Denn gute Beratung ist für uns der erste Schritt zu einem gelungenen Projekt.
+      </p>
+      <div class="kontakt-cta">
+        <p class="cta-text">Kontaktieren Sie uns – und lassen Sie uns gemeinsam die passende Lösung für Ihr Dach finden.</p>
+        <a href="kontakt.html" class="btn primary large">Jetzt Kontakt aufnehmen</a>
+      </div>
+    </section>    
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+    </script>
+
+    <script>
+      const carousel = document.querySelector('.service-carousel');
+      const items = document.querySelectorAll('.service-entry');
+      const itemsPerSlide = 3;
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        const maxIndex = Math.floor((items.length - 1) / itemsPerSlide);
+        currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+        const offset = -(100 * currentIndex);
+        carousel.style.transform = `translateX(${offset}%)`;
+      }
+
+      document.getElementById('carousel-next').onclick = () => {
+        currentIndex++;
+        updateCarousel();
+      };
+
+      document.getElementById('carousel-prev').onclick = () => {
+        currentIndex--;
+        updateCarousel();
+      };
+
+      updateCarousel();
+    </script>
+
+  <footer class="footer-gradient">
+    <div class="footer-content">
+      <div>
+        <strong>Dachtechnik Mallonn</strong><br>
+        Hallermundstraße 1<br>
+        31832 Springe-Eldagsen
+      </div>
+      <div>
+        +49 (0)170 5781360<br>
+        info@dach-mallonn.de
+      </div>
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Barrierefreiheit</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
