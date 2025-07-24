@@ -9,8 +9,13 @@
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 </head>
 
-<body>
-    <header class="main-header" id="siteHeader">
+<body style="overflow-x: hidden;">
+    <header class="main-header" id="siteHeader"  style="
+    background-image: url('img/backgrounds/hamburg.jpg.jpg');
+    background-size: cover;
+    background-position: center top;
+    min-height: 65vh;
+  ">
         <div class="hero-overlay"></div>
 
         <div class="nav-inner">
@@ -26,8 +31,14 @@
         </div>
       
         <div class="hero-content">
-          <h1>WIR BAUEN DACHER MIT WEIT BLICK</h1>
-          <p>Bei Dachtechnik Mallonn steht Qualität und Innovation im Mittelpunkt. Als Spezialisten für Flachdächer un Dachtechnik verbinden wir modernste Technologien mit traditionellem Handwerk. Ob flache Konstruktionen für die optimale Nutzung von Wohn- und Arbeitsräumen oder klassiche Dächer mit Ziegeln - unser Ziel ist es, jedes Projekt individuell und nachhaltig zu gestalten. Vertrauen Sie auf uns für Dachlösungen, die Langlebigkeit, Präzision und Ästhetik vereinen.</p>
+          <h1>WIR BAUEN DÄCHER MIT WEITBLICK</h1>
+          <p> 
+            Herzlich willkommen bei Dachtechnik Mallonn! 
+            Wir sind Ihr zuverlässiger Partner rund ums Dach. 
+            Bei Dachtechnik Mallonn bieten wir Ihnen umfassende Lösungen für alle Dacharbeiten – egal ob Flachdächer, Steildächer, Blecharbeiten, Reparaturen oder Sanierungen.
+            Mit viel Fachwissen, Präzision und Leidenschaft kümmern wir uns um die perfekte Umsetzung Ihrer Wünsche.
+            Vertrauen Sie auf unsere Erfahrung und unser Engagement, um Ihr Zuhause oder Ihre Immobilie optimal zu schützen und aufzuwerten. 
+            Wir freuen uns darauf, gemeinsam mit Ihnen Ihr Projekt zu realisieren!</p>
           <div class="hero-buttons">
             <a href="leistungen.html" class="btn primary">Leistungen</a>
             <a href="uber-uns.html" class="btn secondary">Über uns</a>
@@ -35,8 +46,6 @@
         </div>
       </header>
       
-      <script src="js/main.js"></script>
-
     <!-- Schnelleinstieg -->
       <section class="quick-access">
         <h2>Schnelleinstieg</h2>
@@ -79,39 +88,49 @@
     <div class="service-static-grid">
       <div class="service-entry" data-aos="zoom-in">
         <a href="leistungen.html#flachdach">
-          <img src="img/leistungen/flachdach_mock.jpeg" alt="Flachdach" />
+          <div class="service-inner">
+            <img src="img/leistungen/flachdach_2.jpg" alt="Flachdach" />
+          </div>
           <h3>Flachdach</h3>
         </a>
-        <p>Ideal für moderne Architektur – energieeffizient und funktional.</p>
+        <p>Vielseitig, langlebig und zukunftsorientiert – ideal für moderne Wohn- und Gewerbebauten.</p>
       </div>
     
       <div class="service-entry" data-aos="zoom-in">
         <a href="leistungen.html#ziegeldach">
-          <img src="img/leistungen/ziegeldach_mock.png" alt="Ziegeldach" />
-          <h3>Ziegeldach</h3>
+          <div class="service-inner">
+            <img src="img/leistungen/ziegeldach_mock.png" alt="Ziegeldach" />
+          </div>
+          <h3>Steildach</h3>
         </a>
         <p>Klassischer Look mit langlebigem Schutz vor Witterung.</p>
       </div>
     
       <div class="service-entry" data-aos="zoom-in">
         <a href="leistungen.html#dachsanierung">
-          <img src="img/leistungen/gerust_mock.JPG" alt="Dachsanierung" />
+          <div class="service-inner">
+            <img src="img/leistungen/gerust_mock.JPG" alt="Dachsanierung" />
+          </div>
           <h3>Dachsanierung</h3>
         </a>
         <p>Erneuerung bestehender Dächer für optimale Sicherheit und Wertsteigerung.</p>
       </div>
     
       <div class="service-entry" data-aos="zoom-in">
-        <a href="leistungen.html#bauklempnerei">
-          <img src="img/leistungen/bauklammern_mock.jpg" alt="Bauklempnerei" />
-          <h3>Bauklempnerei</h3>
+        <a href="leistungen.html#terrassenbau">
+          <div class="service-inner">
+            <img src="img/leistungen/terrasse.jpg" alt="Terrassenbau" />
+          </div>
+          <h3>Terrassenbau</h3>
         </a>
-        <p>Metallarbeiten rund ums Dach – präzise und langlebig.</p>
+        <p>Individueller Terrassenbau, fachgerecht geplant und ausgeführt für mehr Wohnkomfort und langlebige Ästhetik.</p>
       </div>
     
       <div class="service-entry" data-aos="zoom-in">
         <a href="leistungen.html#fassade">
-          <img src="img/leistungen/gaube_fassade_solar_mock.JPG" alt="Fassadenverkleidung" />
+          <div class="service-inner">
+            <img src="img/leistungen/blech.jpg" alt="Fassadenverkleidung" />
+          </div>
           <h3>Fassadenverkleidung</h3>
         </a>
         <p>Ästhetische Fassaden mit Schutzfunktion – individuell gestaltet.</p>
@@ -119,7 +138,9 @@
     
       <div class="service-entry" data-aos="zoom-in">
         <a href="leistungen.html#photovoltaik">
-          <img src="img/leistungen/pv_anlage_mock.png" alt="Photovoltaikanlage" />
+          <div class="service-inner">
+            <img src="img/leistungen/pv_anlage.JPG" alt="Photovoltaikanlage" />
+          </div>
           <h3>Photovoltaikanlage</h3>
         </a>
         <p>Strom vom Dach – umweltfreundlich und kostensparend.</p>
@@ -137,9 +158,17 @@
         <div class="team-text">
           <h2>Über Dachtechnik Mallonn</h2>
           <p>
-            Seit über 20 Jahren steht der Name <strong>Mallonn</strong> für solides Handwerk und zuverlässige Dachtechnik in Springe-Eldagsen und Umgebung.  
-            Gegründet als Familienunternehmen, verbindet Dachtechnik Mallonn heute Tradition mit technischem Fortschritt – und das mit Leidenschaft für jedes einzelne Projekt.  
-            Unsere Wurzeln liegen in der Region, unser Anspruch ist Qualität – Tag für Tag, Dach für Dach.
+            Felix Mallonn ist leidenschaftlicher Dachdecker und Gründer von <strong>Dachtechnik Mallnn</strong>.
+            Seit 2012 ist er im Handwerk tätig, nachdem er seine Ausbildung zum Zimmerer erfolgreich abgeschlossen hat.
+          </p>
+          <p>  
+            Im Jahr 2018 hat er seine Qualifikation zum Dachdecker erworben, um sein Fachwissen weiter auszubauen.
+            Mit über 13 Jahren Berufserfahrung und seinem Meistertitel im Dachdeckerhandwerk bringt Felix Mallonn viel Fachkompetenz und Engagement in jedes Projekt ein. 
+          </p>
+          <p>  
+            Er ist stolz darauf, persönlich für die <strong>Qualität</strong> und <strong>Zuverlässigkeit</strong> seines Betriebs zu stehen.
+            Er legt großen Wert auf individuelle Beratung und maßgeschneiderte Lösungen, damit Dächer optimal geschützt und optisch ansprechend gestaltet werden. 
+            Felix Mallonn freut sich darauf, auch Ihr Projekt mit seiner Erfahrung und Leidenschaft umzusetzen.
           </p>
         </div>
     
@@ -150,6 +179,7 @@
             </a>
             <div class="member-info">
               <h3>Felix Mallonn</h3>
+              <p>Inhaber</p>
               <p>Dachdeckermeister</p>
             </div>
           </div>
@@ -170,15 +200,85 @@
             </a>
             <div class="member-info">
               <h3>Marcel</h3>
-              <p>Projektleitung</p>
+              <p>Facharbeiter</p>
             </div>
           </div>
         </div>        
       </div>
     </section>
+
+    <!-- Eindrücke section -->
+    <section style="background: #f8f9fa; padding: 4rem 0;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <hr style="border: none; border-top: 4px solid #c20000; width: 75%; margin: 0 auto 1rem auto;">
+        <h2 style="font-size: 2rem; font-weight: 600;">Eindrücke</h2>
+      </div>
+    
+      <div class="carousel-wrapper">
+        <button class="carousel-btn left" id="prevBtn">&#10094;</button>
+        <div class="carousel-track" id="carouselTrack"></div>
+        <button class="carousel-btn right" id="nextBtn">&#10095;</button>
+      </div>
+    </section>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const images = [
+        "img/leistungen/flachdach_gros.jpg",
+        "img/leistungen/gerust_mock.JPG",
+        "img/leistungen/gaube_fassade_solar_mock.JPG",
+        "img/leistungen/flachdach_holz.jpg",
+        "img/leistungen/flachdach_holz_fertig.JPG",
+        "img/leistungen/pv_anlage.JPG",
+        "img/leistungen/cardport_holzarbeiten.JPG",
+        "img/leistungen/fassade.JPG",
+        "img/leistungen/blech.jpg",
+      ];
+    
+      const track = document.getElementById("carouselTrack");
+      let currentIndex = 0;
+    
+      function render() {
+        track.innerHTML = "";
+    
+        for (let offset = -1; offset <= 1; offset++) {
+          let idx = (currentIndex + offset + images.length) % images.length;
+          const img = document.createElement("img");
+          img.src = images[idx];
+          img.className = "carousel-image";
+          if (offset === 0) {
+            img.classList.add("center");
+          } else {
+            img.classList.add("side");
+          }
+          track.appendChild(img);
+        }
+      }
+    
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        render();
+      });
+    
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        render();
+      });
+    
+      render();
+    });
+    </script>    
+     
       
     <!-- Kontakt -->
-    <section class="kontakt kontakt-aligned">
+    <section class="kontakt kontakt-aligned" id="kontakt-section">
+      <div class="deco-img-wrapper">
+        <img src="img/backgrounds/startseite_img.png" alt="left deco" />
+      </div>
+      <div class="deco-img-wrapper-right">
+        <img src="img/backgrounds/startseite_img2.png" alt="right deco" />
+      </div>
+      
       <h2>Persönlich. Verlässlich. Erreichbar.</h2>
       <p>
         Der direkte Draht zu Dachtechnik Mallonn – wir sind für Sie da. Ob erste Fragen, konkrete Projektanfragen oder Terminvereinbarungen:  
@@ -191,6 +291,7 @@
     </section>    
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   
     <script>
       AOS.init({
         duration: 800,
@@ -199,30 +300,27 @@
     </script>
 
     <script>
-      const carousel = document.querySelector('.service-carousel');
-      const items = document.querySelectorAll('.service-entry');
-      const itemsPerSlide = 3;
-      let currentIndex = 0;
+      AOS.init({
+        duration: 1200,
+        once: true,
+        offset: 150
+      });
 
-      function updateCarousel() {
-        const maxIndex = Math.floor((items.length - 1) / itemsPerSlide);
-        currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
-        const offset = -(100 * currentIndex);
-        carousel.style.transform = `translateX(${offset}%)`;
-      }
+      AOS.registerAnimation('custom-left-img', {
+        css: `.deco-img-wrapper {
+          animation: slideInRubberLeft 2.5s ease-out forwards;
+        }`
+      });
 
-      document.getElementById('carousel-next').onclick = () => {
-        currentIndex++;
-        updateCarousel();
-      };
-
-      document.getElementById('carousel-prev').onclick = () => {
-        currentIndex--;
-        updateCarousel();
-      };
-
-      updateCarousel();
+      AOS.registerAnimation('custom-right-img', {
+        css: `.deco-img-wrapper-right {
+          animation: slideInRubberRight 2.5s ease-out forwards;
+        }`
+      });
     </script>
+
+    <script src="js/main.js"></script>
+
 
   <footer class="footer-gradient">
     <div class="footer-content">

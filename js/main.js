@@ -125,32 +125,67 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.getElementById("kontaktForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+// Contact form handler
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("status");
 
-  const spam = document.getElementById("spam").value;
-  if (parseInt(spam) !== 12) {
-    alert("Bitte lösen Sie den Spamschutz korrekt.");
-    return;
+  if (form) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          status.textContent = "Message sent!";
+          form.reset();
+        } else {
+          const result = await response.json();
+          status.textContent = result.error || "There was a problem.";
+        }
+      } catch (error) {
+        status.textContent = "Network error. Please try again.";
+      }
+    });
   }
-
-  const formData = new FormData(this);
-  const data = {};
-  formData.forEach((v, k) => data[k] = v);
-
-  const now = new Date().toISOString().split("T")[0];
-  const subject = `Anfrage_${now}`;
-  const body = `
-    Vorname: ${data.vorname}
-    Nachname: ${data.nachname}
-    E-Mail: ${data.email}
-    Telefon: ${data.telefon}
-    Straße: ${data.strasse || "-"}
-    Hausnummer: ${data.hausnummer || "-"}
-    PLZ: ${data.plz}
-    Ort: ${data.ort || "-"}
-    Nachricht: ${data.nachricht}
-  `;
-
-  window.location.href = `mailto:info@dach-mallonn.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
+
+// Sliding function for flachdach leistungen.html
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById('baSliderOverlay');
+  const handle = document.getElementById('baSliderHandle');
+  const container = handle?.parentElement;
+
+  if (!overlay || !handle || !container) return;
+
+  let active = false;
+
+  const updateSlider = (x) => {
+    const rect = container.getBoundingClientRect();
+    let pos = x - rect.left;
+    pos = Math.max(0, Math.min(pos, rect.width));
+    overlay.style.width = pos + 'px';
+    handle.style.left = pos + 'px';
+  };
+
+  handle.addEventListener('mousedown', () => active = true);
+  document.addEventListener('mouseup', () => active = false);
+  document.addEventListener('mousemove', (e) => {
+    if (active) updateSlider(e.clientX);
+  });
+
+  handle.addEventListener('touchstart', () => active = true);
+  document.addEventListener('touchend', () => active = false);
+  document.addEventListener('touchmove', (e) => {
+    if (active && e.touches[0]) updateSlider(e.touches[0].clientX);
+  });
+});
+
