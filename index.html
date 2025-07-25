@@ -9,13 +9,26 @@
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 </head>
 
-<body style="overflow-x: hidden;">
-    <header class="main-header" id="siteHeader"  style="
-    background-image: url('img/backgrounds/hamburg.jpg.jpg');
-    background-size: cover;
-    background-position: center top;
-    min-height: 65vh;
-  ">
+<body class="index-page" style="overflow-x: hidden;">
+
+      <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner-content">
+          <p>
+            Diese Website verwendet Cookies, um bestmögliche Funktionalität bieten zu können.
+            <a href="datenschutz.html" target="_blank">Mehr erfahren</a>
+          </p>
+          <button class="cookie-accept-btn" onclick="acceptCookies()">Verstanden</button>
+        </div>
+      </div>
+      
+      <header class="main-header" id="siteHeader"
+      style="
+      background-image: url('img/backgrounds/backgorund_new.jpg');
+      background-size: cover;
+      background-position: center 35%;
+      min-height: 60vh;
+    ">
+  
         <div class="hero-overlay"></div>
 
         <div class="nav-inner">
@@ -97,9 +110,9 @@
       </div>
     
       <div class="service-entry" data-aos="zoom-in">
-        <a href="leistungen.html#ziegeldach">
+        <a href="leistungen.html#steildach">
           <div class="service-inner">
-            <img src="img/leistungen/ziegeldach_mock.png" alt="Ziegeldach" />
+            <img src="img/leistungen/ziegeldach_mock.png" alt="Steildach" />
           </div>
           <h3>Steildach</h3>
         </a>
@@ -158,7 +171,7 @@
         <div class="team-text">
           <h2>Über Dachtechnik Mallonn</h2>
           <p>
-            Felix Mallonn ist leidenschaftlicher Dachdecker und Gründer von <strong>Dachtechnik Mallnn</strong>.
+            <strong>Felix Mallonn</strong> ist leidenschaftlicher Dachdecker und Gründer von <strong><span style="color: red;">Dachtechnik Mallonn</span></strong>.
             Seit 2012 ist er im Handwerk tätig, nachdem er seine Ausbildung zum Zimmerer erfolgreich abgeschlossen hat.
           </p>
           <p>  
@@ -167,7 +180,7 @@
           </p>
           <p>  
             Er ist stolz darauf, persönlich für die <strong>Qualität</strong> und <strong>Zuverlässigkeit</strong> seines Betriebs zu stehen.
-            Er legt großen Wert auf individuelle Beratung und maßgeschneiderte Lösungen, damit Dächer optimal geschützt und optisch ansprechend gestaltet werden. 
+            Das Unternehmen legt großen Wert auf individuelle Beratung und maßgeschneiderte Lösungen, damit Dächer optimal geschützt und optisch ansprechend gestaltet werden. 
             Felix Mallonn freut sich darauf, auch Ihr Projekt mit seiner Erfahrung und Leidenschaft umzusetzen.
           </p>
         </div>
@@ -183,32 +196,13 @@
               <p>Dachdeckermeister</p>
             </div>
           </div>
-        
-          <div class="team-member">
-            <a href="uber-uns.html" class="member-photo-wrapper">
-              <img 
-                src="img/team/helfer.jpg" 
-                alt="Teammitglied" 
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-              />
-              <img 
-                class="fallback-photo" 
-                src="img/icons/person-svgrepo-com.svg" 
-                alt="Person Icon" 
-                style="display: none;"
-              />
-            </a>
-            <div class="member-info">
-              <h3>Marcel</h3>
-              <p>Facharbeiter</p>
-            </div>
-          </div>
+          <img src="img/icons/dachdecker_logo.svg" alt="Dachdecker Logo" class="team-logo-overlay" />
         </div>        
-      </div>
+      </div>     
     </section>
 
     <!-- Eindrücke section -->
-    <section style="background: #f8f9fa; padding: 4rem 0;">
+    <section style="background: #ffffff; padding: 4rem 0;">
       <div style="text-align: center; margin-bottom: 2rem;">
         <hr style="border: none; border-top: 4px solid #c20000; width: 75%; margin: 0 auto 1rem auto;">
         <h2 style="font-size: 2rem; font-weight: 600;">Eindrücke</h2>
@@ -219,20 +213,29 @@
         <div class="carousel-track" id="carouselTrack"></div>
         <button class="carousel-btn right" id="nextBtn">&#10095;</button>
       </div>
+
+      <div style="text-align: center; margin: 4rem 0 1rem;">
+        <hr style="border: none; border-top: 4px solid #c20000; width: 75%; margin: 0 auto;">
+      </div>
+      
     </section>
     
     <script>
     document.addEventListener("DOMContentLoaded", () => {
       const images = [
-        "img/leistungen/flachdach_gros.jpg",
         "img/leistungen/gerust_mock.JPG",
         "img/leistungen/gaube_fassade_solar_mock.JPG",
         "img/leistungen/flachdach_holz.jpg",
         "img/leistungen/flachdach_holz_fertig.JPG",
+        "img/leistungen/flachdach_gros.jpg",
+        "img/leistungen/flachdach_2.jpg",
         "img/leistungen/pv_anlage.JPG",
         "img/leistungen/cardport_holzarbeiten.JPG",
+        "img/leistungen/aspest.jpg",
         "img/leistungen/fassade.JPG",
+        "img/leistungen/Schornsteinverkleidung.jpg",
         "img/leistungen/blech.jpg",
+        "img/leistungen/terrasse.jpg"
       ];
     
       const track = document.getElementById("carouselTrack");
@@ -271,14 +274,7 @@
      
       
     <!-- Kontakt -->
-    <section class="kontakt kontakt-aligned" id="kontakt-section">
-      <div class="deco-img-wrapper">
-        <img src="img/backgrounds/startseite_img.png" alt="left deco" />
-      </div>
-      <div class="deco-img-wrapper-right">
-        <img src="img/backgrounds/startseite_img2.png" alt="right deco" />
-      </div>
-      
+    <section class="kontakt kontakt-aligned" id="kontakt-section">      
       <h2>Persönlich. Verlässlich. Erreichbar.</h2>
       <p>
         Der direkte Draht zu Dachtechnik Mallonn – wir sind für Sie da. Ob erste Fragen, konkrete Projektanfragen oder Terminvereinbarungen:  
@@ -299,29 +295,6 @@
       });
     </script>
 
-    <script>
-      AOS.init({
-        duration: 1200,
-        once: true,
-        offset: 150
-      });
-
-      AOS.registerAnimation('custom-left-img', {
-        css: `.deco-img-wrapper {
-          animation: slideInRubberLeft 2.5s ease-out forwards;
-        }`
-      });
-
-      AOS.registerAnimation('custom-right-img', {
-        css: `.deco-img-wrapper-right {
-          animation: slideInRubberRight 2.5s ease-out forwards;
-        }`
-      });
-    </script>
-
-    <script src="js/main.js"></script>
-
-
   <footer class="footer-gradient">
     <div class="footer-content">
       <div>
@@ -334,11 +307,13 @@
         info@dach-mallonn.de
       </div>
       <div class="footer-links">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">Barrierefreiheit</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>  
+
 </body>
 </html>

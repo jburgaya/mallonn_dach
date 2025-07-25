@@ -7,13 +7,25 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="img/Favicon/Favicon_Web.png" />
 </head>
-<body>
+
+<body class="kontakt-page">
+
+      <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner-content">
+          <p>
+            Diese Website verwendet Cookies, um bestmögliche Funktionalität bieten zu können.
+            <a href="datenschutz.html" target="_blank">Mehr erfahren</a>
+          </p>
+          <button class="cookie-accept-btn" onclick="acceptCookies()">Verstanden</button>
+        </div>
+      </div>
+  
       <header class="main-header kontakt-header" id="siteHeader"
       style="
-      background-image: url('img/backgrounds/hamburg.jpg.jpg');
+      background-image: url('img/backgrounds/backgorund_new.jpg');
       background-size: cover;
-      background-position: center top;
-      min-height: 65vh;
+      background-position: center 35%;
+      min-height: 45vh;
     ">
         <div class="hero-overlay"></div>
         <div class="nav-inner">
@@ -33,8 +45,6 @@
           <p>Wir freuen uns auf Ihre Nachricht.</p>
         </div>
       </header>
-
-      <script src="js/main.js"></script>
 
       <main class="kontakt-main">
         <div class="kontakt-wrapper">
@@ -69,14 +79,15 @@
               </div>
       
               <div class="form-row checkbox-row">
-                <input type="checkbox" id="dsgvo" name="dsgvo" value="1" required />
-                <label for="dsgvo">
-                  Ich willige ein, dass diese Website meine übermittelten Informationen speichert, sodass meine Anfrage beantwortet werden kann.
-                  <br />
-                  Näheres über die gespeicherten Daten erfahren Sie unter
-                  <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>.
+                <label for="dsgvo" style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                  <input type="checkbox" id="dsgvo" name="dsgvo" value="1" required />
+                  <span>
+                    Ich willige ein, dass diese Website meine übermittelten Informationen speichert, sodass meine Anfrage beantwortet werden kann.
+                    Näheres über die gespeicherten Daten erfahren Sie unter
+                    <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>.
+                  </span>
                 </label>
-              </div>
+              </div>              
       
               <div class="form-row spam-row">
                 <label for="spam">Spamschutz * 7 + 5 =</label>
@@ -159,6 +170,7 @@
           </div>
       
         </div>
+
       </main>
 
   <footer class="footer-gradient">
@@ -173,12 +185,14 @@
         info@dach-mallonn.de
       </div>
       <div class="footer-links">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">Barrierefreiheit</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>  
+
 </body>
 </html>
 

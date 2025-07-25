@@ -1,14 +1,30 @@
 const BASE_URL = "https://dach-mallonn.de"; // Replace with your domain
 
 // Scroll-responsive header
+let lastScrollTop = 0;
+const header = document.querySelector(".main-header");
+const nav = document.querySelector(".nav-inner");
+
 window.addEventListener("scroll", () => {
-  const header = document.getElementById("siteHeader");
-  if (window.scrollY > 20) {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  // Toggle .scrolled class for dark background
+  if (scrollTop > 20) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
   }
+
+  // Detect scroll direction and toggle white border
+  if (scrollTop < lastScrollTop && scrollTop > 20) {
+    nav.classList.add("scrolling-up");
+  } else {
+    nav.classList.remove("scrolling-up");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
+
 
 // Mouse-driven hero overlay effect
 document.addEventListener('mousemove', function (e) {
@@ -27,6 +43,9 @@ document.addEventListener('mousemove', function (e) {
     )
   `;
 });
+
+// Scroll responsive header over all the page
+
 
 // Dynamically set active nav link
 document.addEventListener("DOMContentLoaded", function () {
@@ -189,3 +208,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Function to visualize video on Leistungen
+function toggleVideo(overlayId) {
+  const overlay = document.getElementById(overlayId);
+  if (!overlay) return;
+
+  const video = overlay.querySelector("video");
+
+  const isActive = overlay.classList.toggle("active");
+
+  if (isActive) {
+    video.play();
+  } else {
+    video.pause();
+    video.currentTime = 0;
+  }
+}
+
+// COOKIES
+function acceptCookies() {
+  localStorage.setItem("cookiesAccepted", "true");
+  document.getElementById("cookieBanner").style.display = "none";
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  if (!localStorage.getItem("cookiesAccepted")) {
+    document.getElementById("cookieBanner").style.display = "block";
+  }
+});

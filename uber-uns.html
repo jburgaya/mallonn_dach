@@ -9,15 +9,26 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 </head>
-  <body>
+
+<body class="ueberuns-page">
+
+    <div class="cookie-banner" id="cookieBanner">
+      <div class="cookie-banner-content">
+        <p>
+          Diese Website verwendet Cookies, um bestmögliche Funktionalität bieten zu können.
+          <a href="datenschutz.html" target="_blank">Mehr erfahren</a>
+        </p>
+        <button class="cookie-accept-btn" onclick="acceptCookies()">Verstanden</button>
+      </div>
+    </div>
+    
     <header
     class="main-header"
     id="siteHeader"
     style="
-      background-image: url('img/team/uber-uns_mock.JPG');
+      background-image: url('img/backgrounds/backgorund_new_2.jpg');
       background-size: cover;
-      background-position: center top;
-      min-height: 65vh;
+      background-position: center 40%;
     "
   >
         <div class="hero-overlay"></div>
@@ -40,8 +51,6 @@
       </div>
     </header>
   
-    <script src="js/main.js"></script>  
-
     <main class="uber-uns-main">
       <section class="uber-uns">
         <div class="uber-uns-intro">
@@ -108,22 +117,10 @@
               <div style="padding: 1.5rem; min-height: 230px;">
                 <h3 style="color: #d72226; font-size: 1.25rem; margin-bottom: 0.25rem;">Marcel</h3>
                 <p style="color: #888; font-size: 0.85rem; text-transform: uppercase;">TEAMMITGLIED</p>
-                <p style="margin: 0.5rem 0;">Facharbeiter</p>
+                <p style="margin: 0.5rem 0;">Facharbeiter</p><br>
                 <a href="mailto:info@dach-mallonn.de" style="display: inline-block; background-color: #d72226; color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none;">info@dach-mallonn.de</a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="uber-uns" style="margin-top: 4rem;">
-        <div class="uber-uns-intro">
-          <h2 class="section-heading-uu">Unsere Zertifikate</h2>
-          <hr class="section-divider-uu" />
-          <div class="constrained-text">
-          <p>
-            Asbest zertifiziert
-          <p>
           </div>
         </div>
       </section>
@@ -134,7 +131,7 @@
           once: true
         });
       </script>
-      
+
     </main>
 
   <footer class="footer-gradient">
@@ -149,11 +146,13 @@
         info@dach-mallonn.de
       </div>
       <div class="footer-links">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">Barrierefreiheit</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>  
+
 </body>
 </html>

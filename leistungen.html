@@ -3,20 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MALLONN - Kontakt</title>
+  <title>MALLONN - Leistungen</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="img/Favicon/Favicon_Web.png" />
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="leistungen-page">
+
+    <div class="cookie-banner" id="cookieBanner">
+      <div class="cookie-banner-content">
+        <p>
+          Diese Website verwendet Cookies, um bestmögliche Funktionalität bieten zu können.
+          <a href="datenschutz.html" target="_blank">Mehr erfahren</a>
+        </p>
+        <button class="cookie-accept-btn" onclick="acceptCookies()">Verstanden</button>
+      </div>
+    </div>
+    
     <header class="main-header" id="siteHeader"
     style="
-      background-image: url('img/leistungen/blech.jpg');
+      background-image: url('img/backgrounds/ryunosuke-kikuno-rxT2WDm-peU-unsplash.jpg');
       background-size: cover;
-      background-position: center top;
-      min-height: 65vh;
+      background-position: center 60%;
+      min-height: 45vh;
     "
     >
         <div class="hero-overlay"></div>
@@ -40,9 +51,7 @@
           </p>
         </div>
       </header>
-      
-      <script src="js/main.js"></script>
-    
+          
       <section class="services">
         <div class="section-header">
           <h2 class="section-heading">Unsere Leistungen für Sie</h2>
@@ -64,12 +73,24 @@
         </section>
       
         <section id="flachdach" class="section section-light" style="text-align: left;" data-aos="fade-up">
-          <div>
-            <img src="img/leistungen/flachdach_gros.jpg" alt="Flachdach" />
-            <img src="img/leistungen/flachdach_2.jpg" alt="Flachdach" />
+          <!-- Image and Button -->
+          <div class="video-image-wrapper">
+            <img src="img/leistungen/flachdach_gros.jpg" alt="Flachdach" class="section-image" />
+            <div class="video-trigger" onclick="toggleVideo('flachdachvideoOverlay')" aria-label="Video abspielen">&#9658;</div>
           </div>
+          <!-- Video Overlay -->
+          <div class="video-overlay" id="flachdachvideoOverlay">
+            <div class="video-content">
+              <span class="close-btn" onclick="toggleVideo('flachdachvideoOverlay')">&times;</span>
+              <video controls>
+                <source src="img/video/3b15f1b6-7bd1-47b3-8c41-6807b7b13209.MP4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <!-- Text -->
           <div>
-              <h2>Flachdach</h2>
+            <h2>Flachdach</h2>
               <p>
                 Ein <span style="color: red;">Flachdach</span> ist modern, wirtschaftlich, langlebig und pflegeleicht zugleich. 
                 Es eignet sich für fast jeden Bautyp und ist aus der heutigen Architektur nicht mehr wegzudenken. 
@@ -83,7 +104,7 @@
           </div>
         </section>
               
-        <section id="fassade" class="section section-light" style="text-align: left;" data-aos="fade-up">
+        <section id="fassade" class="section section-dark" style="text-align: left;" data-aos="fade-up">
           <div>
             <img src="img/leistungen/blech.jpg" alt="Fassaden" />
           </div>
@@ -93,7 +114,7 @@
           </div>
         </section>
 
-        <section id="dachsanierung" class="section section-dark" style="text-align: left;" data-aos="fade-up">
+        <section id="dachsanierung" class="section section-light" style="text-align: left;" data-aos="fade-up">
           <div>
             <img src="img/leistungen/gerust_mock.JPG" alt="Reparaturen" />
           </div>
@@ -109,9 +130,9 @@
           </div>
         </section>
         
-        <section id="dachsanierung" class="section section-light" style="text-align: left;" data-aos="fade-up">
+        <section id="dachsanierung" class="section section-dark" style="text-align: left;" data-aos="fade-up">
           <div>
-            <img src="img/leistungen/gerust_mock.JPG" alt="Dachsanierung" />
+            <img src="img/leistungen/gerust_mock.JPG" alt="Reparaturen" />
           </div>
           <div>
             <h2>Dachsanierung</h2>
@@ -143,7 +164,7 @@
       
         <section id="asbestsanierung" class="section section-dark" style="text-align: left;" data-aos="fade-up">
           <div>
-            <img src="img/leistungen/asbest_Faserzementziegel_mock.png" alt="Asbestsanierung" />
+            <img src="img/leistungen/aspest.jpg" alt="Asbestsanierung" />
           </div>
           <div>
             <h2>Asbestsanierung</h2>
@@ -152,14 +173,14 @@
           </div>
         </section>
 
-        <section id="photovoltaik" class="section section-dark" style="text-align: left;" data-aos="fade-up">
+        <section id="photovoltaik" class="section section-light" style="text-align: left;" data-aos="fade-up">
           <div>
             <img src="img/leistungen/pv_anlage.JPG" alt="Photovoltaikanlage" />
           </div>
           <div>
             <h2>Photovoltaikanlage</h2>
             <p>
-              Unsere Photovoltaikanlagen ermöglichen es Ihnen, Ihre Dachflächen effizient zur umweltfreundlichen Stromgewinnung zu nutzen. 
+              Unsere PV-Anlagen ermöglichen es Ihnen, Ihre Dachflächen effizient zur umweltfreundlichen Stromgewinnung zu nutzen. 
               Von der Planung bis zur fachgerechten Installation begleiten wir Sie bei jedem Schritt und sorgen für eine optimale Integration in Ihr Dachsystem.
               Profitieren Sie von sinkenden Energiekosten, nachhaltigem Eigenverbrauch und staatlichen Förderprogrammen – für ein zukunftssicheres Zuhause.
             </p>
@@ -170,10 +191,23 @@
           </div>
         </section>
       
-        <section id="terrassenbau" class="section section-light" style="text-align: left;" data-aos="fade-up">
-          <div>
-            <img src="img/leistungen/terrasse.jpg" alt="Terrassenbau" />
+        <section id="terrassenbau" class="section section-dark" style="text-align: left;" data-aos="fade-up">
+          <!-- Image and Button -->
+          <div class="video-image-wrapper">
+            <img src="img/leistungen/terrasse.jpg" alt="Terrassenbau" class="section-image" />
+            <div class="video-trigger" onclick="toggleVideo('terrassenVideoOverlay')" aria-label="Video abspielen">&#9658;</div>
           </div>
+          <!-- Video Overlay -->
+          <div class="video-overlay" id="terrassenVideoOverlay">
+            <div class="video-content">
+              <span class="close-btn" onclick="toggleVideo('terrassenVideoOverlay')">&times;</span>
+              <video controls>
+                <source src="img/video/82e286bf-6fa1-4731-ae27-20c79fd3c6c4.MP4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <!-- Text -->        
           <div>
             <h2>Terrassenbau</h2>
             <p>
@@ -186,9 +220,9 @@
               Wir nehmen uns Zeit, um Ihre Wünsche und Bedürfnisse zu verstehen und gemeinsam die beste Lösung für Ihr Zuhause zu finden.
             </p>
           </div>
-        </section>
+        </section>        
       
-        <section id="carports" class="section section-dark" style="text-align: left;" data-aos="fade-up">
+        <section id="carports" class="section section-light" style="text-align: left;" data-aos="fade-up">
           <div>
             <img src="img/leistungen/cardport_holzarbeiten.JPG" alt="Carports" />
           </div>
@@ -206,9 +240,9 @@
           </div>
         </section>
 
-        <section id="schornsteinverkleidung" class="section section-light" style="text-align: left;" data-aos="fade-up">
+        <section id="schornsteinverkleidung" class="section section-dark" style="text-align: left;" data-aos="fade-up">
           <div>
-            <img src="img/leistungen/schornstein_mock.jpg" alt="Schornsteinverkleidung" />
+            <img src="img/leistungen/Schornsteinverkleidung2.jpg" alt="Reparaturen" />
           </div>
           <div>
             <h2>Schornsteinverkleidung</h2>
@@ -216,9 +250,9 @@
           </div>
         </section>
 
-        <section id="belichtung" class="section section-dark" style="text-align: left;" data-aos="fade-up">
+        <section id="belichtung" class="section section-light" style="text-align: left;" data-aos="fade-up">
           <div>
-            <img src="img/leistungen/Rauchabzug.jpg" alt="Belichtung & Rauchabzug" />
+            <img src="img/leistungen/velux_window2.png" alt="Belichtung & Rauchabzug" />
           </div>
           <div>
             <h2>Belichtung & Rauchabzug</h2>
@@ -251,7 +285,7 @@
         once: true
       });
     </script>
-    
+
   </main>
 
   <footer class="footer-gradient">
@@ -266,11 +300,13 @@
         info@dach-mallonn.de
       </div>
       <div class="footer-links">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">Barrierefreiheit</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>  
+
 </body>
 </html>
