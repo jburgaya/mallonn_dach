@@ -1587,3 +1587,28 @@ footer,
   flex-wrap: wrap;
 }
 
+/* DATENSCHUTZ*/
+
+.privacy-content {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.6;
+}
+.privacy-content h2,
+.privacy-content h3,
+.privacy-content h4 {
+  color: #222;
+  margin-top: 1rem;
+}
+
+.privacy-content h2 {
+  font-size: 1.25rem;
+}
+
+.privacy-content h3 {
+  font-size: 1.15rem;
+}
+
+.privacy-content h4 {
+  font-size: 1rem;
+}
