@@ -45,9 +45,39 @@ html {
   }
 }
 
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  .btn.large {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    height: 120px;
+  }
+
+  .hero-content {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 480px) {
   .main-header {
-    min-height: 50vh;
+    min-height: 35vh;
     background-position: center 35%;
   }
 }
