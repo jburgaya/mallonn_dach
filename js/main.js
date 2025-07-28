@@ -7,16 +7,22 @@ const header = document.querySelector(".main-header");
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
+  if (scrollTop > 20) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+
   if (scrollTop < lastScrollTop && scrollTop > 20) {
     // Scrolling up
     header.classList.add("scrolled-up");
   } else {
-    // Scrolling down or near top
     header.classList.remove("scrolled-up");
   }
 
   lastScrollTop = Math.max(0, scrollTop);
 });
+
 
 
 // Mouse-driven hero overlay effect
