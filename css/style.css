@@ -193,7 +193,6 @@ html {
   }
 }
 
-
 /* ================= HEADER + HERO ================= */
 .main-header {
   position: relative;
@@ -253,10 +252,11 @@ html {
 
 
 /* Sticky dark background on scroll */
-.main-header.scrolled .nav-inner {
-  background-color: #1c1c1c;
+.main-header.scrolled.up .nav-inner {
+  background-color: #313131;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   border-bottom: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Navigation Bar */

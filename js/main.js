@@ -1,28 +1,21 @@
 const BASE_URL = "https://dach-mallonn.de"; // Replace with your domain
 
-// Scroll-responsive header
+// Scroll-responsive header: dark background only on scroll up
 let lastScrollTop = 0;
 const header = document.querySelector(".main-header");
-const nav = document.querySelector(".nav-inner");
 
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-  // Toggle .scrolled class for dark background
-  if (scrollTop > 20) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-
-  // Detect scroll direction and toggle white border
   if (scrollTop < lastScrollTop && scrollTop > 20) {
-    nav.classList.add("scrolling-up");
+    // Scrolling up
+    header.classList.add("scrolled-up");
   } else {
-    nav.classList.remove("scrolling-up");
+    // Scrolling down or near top
+    header.classList.remove("scrolled-up");
   }
 
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  lastScrollTop = Math.max(0, scrollTop);
 });
 
 
