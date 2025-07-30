@@ -326,6 +326,26 @@ html {
     text-overflow: ellipsis;
     max-width: 100%;
   }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    align-items: flex-start !important;
+  }
+
+  .footer-links > div {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a img {
+    margin-top: 0.4rem;
+  }
 }
 
 @media (max-width: 600px) {
