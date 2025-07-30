@@ -32,15 +32,35 @@
         <div class="hero-overlay"></div>
 
         <div class="nav-inner">
-          <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
-          <nav>
-            <ul class="nav-links">
-              <li><a href="index.html" class="nav-btn active">Startseite</a></li>
-              <li><a href="leistungen.html" class="nav-btn">Leistungen</a></li>
-              <li><a href="uber-uns.html" class="nav-btn">Über uns</a></li>
-              <li><a href="kontakt.html" class="nav-btn">Kontakt</a></li>
+          <a href="index.html#top">
+            <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
+          </a>
+
+          <!-- Desktop nav links (visible ≥ 993px) -->
+          <div class="nav-links">
+            <a href="index.html" class="nav-btn">Startseite</a>
+            <a href="leistungen.html" class="nav-btn">Leistungen</a>
+            <a href="uber-uns.html" class="nav-btn">Über uns</a>
+            <a href="kontakt.html" class="nav-btn">Kontakt</a>
+          </div>
+          
+          <!--Mobile hamburger-->
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        
+        </div>
+        
+        <div class="mobile-nav-overlay" id="mobileNav">
+          <div class="mobile-nav">
+            <ul>
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="leistungen.html">Leistungen</a></li>
+              <li><a href="uber-uns.html">Über uns</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
-          </nav>
+          </div>
+        </div>
         </div>
       
         <div class="hero-content">
@@ -240,37 +260,49 @@
     
       const track = document.getElementById("carouselTrack");
       let currentIndex = 0;
-    
+      let autoSlideInterval;
+
       function render() {
         track.innerHTML = "";
-    
+
         for (let offset = -1; offset <= 1; offset++) {
-          let idx = (currentIndex + offset + images.length) % images.length;
+          const idx = (currentIndex + offset + images.length) % images.length;
           const img = document.createElement("img");
           img.src = images[idx];
           img.className = "carousel-image";
-          if (offset === 0) {
-            img.classList.add("center");
-          } else {
-            img.classList.add("side");
-          }
+          img.classList.add(offset === 0 ? "center" : "side");
           track.appendChild(img);
         }
       }
-    
+
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+          currentIndex = (currentIndex + 1) % images.length;
+          render();
+        }, 4000);
+      }
+
+      function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+      }
+
       document.getElementById("prevBtn").addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         render();
       });
-    
+
       document.getElementById("nextBtn").addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % images.length;
         render();
       });
-    
+
+      track.addEventListener("mouseenter", stopAutoSlide);
+      track.addEventListener("mouseleave", startAutoSlide);
+
       render();
+      startAutoSlide();
     });
-    </script>    
+  </script>
      
       
     <!-- Kontakt -->
@@ -303,8 +335,8 @@
         31832 Springe-Eldagsen
       </div>
       <div>
-        +49 (0)170 5781360<br>
-        info@dach-mallonn.de
+        <a href="tel:+491705781360" style="color: white; text-decoration: none;">+49 (0)170 5781360</a><br>
+        <a href="mailto:info@dach-mallonn.de" style="color: white; text-decoration: none;">info@dach-mallonn.de</a>
       </div>
       <div class="footer-links">
         <a href="impressum.html">Impressum</a>
@@ -314,6 +346,6 @@
   </footer>
 
   <script src="js/main.js"></script>  
-
+  
 </body>
 </html>

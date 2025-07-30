@@ -21,6 +21,11 @@ body {
   flex-direction: column;
 }
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 html {
   font-size: 20px; /* base size for desktop */
 }
@@ -160,13 +165,79 @@ html {
   }
 }
 
+@media (min-width: 993px) {
+  .hamburger {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  .nav-btn {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    transition: background 0.2s ease;
+    color: white;
+  }
+
+  .nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-inner {
+    padding: 0.5rem 2rem;
+  }
+
+  .email-btn-single-line {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .kontakt-box .kontakt-icons-row {
+    gap: 0.3rem; /* reduces vertical spacing */
+  }
+}
+
 @media (max-width: 992px) {
   .main-header {
     background-position: center 20%;
   }
 
+  .team-preview .team-section-content > div[data-aos="zoom-in"] {
+    width: 300px !important;
+  }
+
+  .team-preview img {
+    height: 240px !important; /* reduce image height */
+  }
+
+  .team-preview .email-btn-single-line {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .team-preview .team-section-content > div[data-aos="zoom-in"] div {
+    padding: 1rem !important;
+    min-height: 190px !important;
+  }
+
   html {
     font-size: 18px;
+  }
+
+  .logo {
+    height: 140px !important;
   }
 
   h1 {
@@ -175,6 +246,14 @@ html {
   
   h2 {
     font-size: 1.2rem;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  .nav-links {
+    display: none !important;
   }
 
   .nav-links {
@@ -237,11 +316,25 @@ html {
     white-space: nowrap;        
     overflow: visible;        
   }
+
+  .email-btn-single-line {
+    white-space: nowrap;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
   html {
     font-size: 16px;
+  }
+
+  .logo {
+    height: 100px !important;
   }
 
   h1 {
@@ -432,6 +525,20 @@ html {
     padding: 1rem;
   }
 
+  .carousel-track {
+    gap: 5px;
+  }
+
+  .carousel-image {
+    width: 90vw;
+    height: auto;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+  }
+
   /* Target the Leistungen page only */
   .leistungen-page .section {
     width: 95%;
@@ -467,6 +574,7 @@ html {
   min-height: unset !important;
   max-height: unset !important;
   padding-bottom: 4rem;
+  padding-top: 100px;
 }
 
 .hero-content {
@@ -595,7 +703,8 @@ html {
 
 /* Navigation Bar */
 .nav-inner {
-  position: sticky;
+  position: fixed;
+  display: flex;
   top: 0;
   width: 100%;
   background-color: transparent;
@@ -606,6 +715,16 @@ html {
   z-index: 10;
   border-bottom: 1px solid white;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-inner.hide {
+  transform: translateY(-100%);
+}
+
+.nav-inner.sticky-dark {
+  background-color: #2e2e2e !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid white;
 }
 
 .logo {
@@ -719,6 +838,105 @@ html {
 .btn.secondary:hover {
   background-color: white;
   color: #1c1c1c;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1002;
+}
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 1px;
+}
+
+/* Ensure hamburger lines change if desired (optional) */
+.hamburger.open span {
+  background-color: #fff;
+}
+
+/* Add transition for better UX */
+.nav-inner {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger span {
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2e2e2e;
+  padding: 2rem 1rem;
+  z-index: 1005;
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid white;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-nav-overlay.active {
+  display: block;
+  pointer-events: auto;
+}
+
+.mobile-nav-overlay.slide-down {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-nav-overlay.slide-up {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav ul li {
+  margin: 1.2rem 0;
+}
+
+.mobile-nav ul li a {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.mobile-nav ul li a:hover {
+  color: rgb(202, 202, 202);
+  transform: translateY(-4px) scale(1.05);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 /* ====================================== MAIN ====================================== */
@@ -1148,7 +1366,7 @@ main {
 .team-text {
   flex: 1 1 60%;
   max-width: 600px;
-  text-align: justify;
+  text-align: left;
 }
 
 .team-text h2 {
@@ -1260,7 +1478,7 @@ main {
   }
 
   .team-text {
-    text-align: justify;
+    text-align: left;
   }
 
   .team-member {
@@ -1333,11 +1551,16 @@ main {
   align-items: center;
   gap: 20px;
   max-width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .carousel-image {
   width: 400px;
   height: 350px;
+  scroll-snap-align: center;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 6px 18px linear-gradient(to right, #282626, #d72226);
@@ -1389,14 +1612,6 @@ main {
     font-size: 1.8rem;
   }
 }  
-
-.carousel-track {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  max-width: 100%;
-}
-  
   
 /* ==================================== LEISTUNGEN ==================================== */
 
@@ -1747,7 +1962,11 @@ main {
 .kontakt-map {
   flex: 1;
   min-width: 300px;
-  max-width: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
 }
 
 .kontakt-main {

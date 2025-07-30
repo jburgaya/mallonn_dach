@@ -27,16 +27,37 @@
       min-height: 45vh;">
     <div class="hero-overlay"></div>
     <div class="nav-inner">
-      <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-btn">Startseite</a></li>
-          <li><a href="leistungen.html" class="nav-btn">Leistungen</a></li>
-          <li><a href="uber-uns.html" class="nav-btn">Über uns</a></li>
-          <li><a href="kontakt.html" class="nav-btn">Kontakt</a></li>
-        </ul>
-      </nav>
+      <a href="index.html#top">
+        <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
+      </a>
+
+      <!-- Desktop nav links (visible ≥ 993px) -->
+      <div class="nav-links">
+        <a href="index.html" class="nav-btn">Startseite</a>
+        <a href="leistungen.html" class="nav-btn">Leistungen</a>
+        <a href="uber-uns.html" class="nav-btn">Über uns</a>
+        <a href="kontakt.html" class="nav-btn">Kontakt</a>
+      </div>
+      
+      <!--Mobile hamburger-->
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    
     </div>
+    
+    <div class="mobile-nav-overlay" id="mobileNav">
+      <div class="mobile-nav">
+        <ul>
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="uber-uns.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
     <div class="hero-content hero-left">
       <h1>Datenschutz</h1>
     </div>
@@ -144,10 +165,10 @@
         Hallermundstraße 1<br>
         31832 Springe-Eldagsen
       </div>
-      <div>
-        +49 (0)170 5781360<br>
-        info@dach-mallonn.de
-      </div>
+    <div>
+      <a href="tel:+491705781360" style="color: white; text-decoration: none;">+49 (0)170 5781360</a><br>
+      <a href="mailto:info@dach-mallonn.de" style="color: white; text-decoration: none;">info@dach-mallonn.de</a>
+    </div>
       <div class="footer-links">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>

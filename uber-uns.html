@@ -34,17 +34,37 @@
         <div class="hero-overlay"></div>
       
       <div class="nav-inner">
-        <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
-        <nav>
-          <ul class="nav-links">
-            <li><a href="index.html" class="nav-btn">Startseite</a></li>
-            <li><a href="leistungen.html" class="nav-btn">Leistungen</a></li>
-            <li><a href="uber-uns.html" class="nav-btn active">Über uns</a></li>
-            <li><a href="kontakt.html" class="nav-btn">Kontakt</a></li>
-          </ul>
-        </nav>
+        <a href="index.html#top">
+          <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
+        </a>
+
+        <!-- Desktop nav links (visible ≥ 993px) -->
+        <div class="nav-links">
+          <a href="index.html" class="nav-btn">Startseite</a>
+          <a href="leistungen.html" class="nav-btn">Leistungen</a>
+          <a href="uber-uns.html" class="nav-btn">Über uns</a>
+          <a href="kontakt.html" class="nav-btn">Kontakt</a>
+        </div>
+        
+        <!--Mobile hamburger-->
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      
       </div>
-    
+      
+      <div class="mobile-nav-overlay" id="mobileNav">
+        <div class="mobile-nav">
+          <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="uber-uns.html">Über uns</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+  
       <div class="hero-content">
         <h1>ÜBER UNS</h1>
         <p>Erfahren Sie mehr über unsere Geschichte und unser Engagement.</p>
@@ -107,7 +127,9 @@
                 <h3 style="color: #d72226; font-size: 1.25rem; margin-bottom: 0.25rem;">Felix Mallonn</h3>
                 <p style="color: #888; font-size: 0.85rem; text-transform: uppercase;">GESCHÄFTSFÜHRER</p>
                 <p style="margin: 0.5rem 0;">Dachdeckermeister, Projektleitung</p>
-                <a href="mailto:info@dach-mallonn.de" style="display: inline-block; background-color: #d72226; color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none;">info@dach-mallonn.de</a>
+                <a href="mailto:info@dach-mallonn.de" class="email-btn-single-line" style="background-color: #d72226; color: white; border-radius: 4px; text-decoration: none;">
+                  info@dach-mallonn.de
+                </a>
               </div>
             </div>
 
@@ -118,7 +140,6 @@
                 <h3 style="color: #d72226; font-size: 1.25rem; margin-bottom: 0.25rem;">Marcel</h3>
                 <p style="color: #888; font-size: 0.85rem; text-transform: uppercase;">TEAMMITGLIED</p>
                 <p style="margin: 0.5rem 0;">Facharbeiter</p><br>
-                <a href="mailto:info@dach-mallonn.de" style="display: inline-block; background-color: #d72226; color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none;">info@dach-mallonn.de</a>
               </div>
             </div>
           </div>
@@ -142,8 +163,8 @@
         31832 Springe-Eldagsen
       </div>
       <div>
-        +49 (0)170 5781360<br>
-        info@dach-mallonn.de
+        <a href="tel:+491705781360" style="color: white; text-decoration: none;">+49 (0)170 5781360</a><br>
+        <a href="mailto:info@dach-mallonn.de" style="color: white; text-decoration: none;">info@dach-mallonn.de</a>
       </div>
       <div class="footer-links">
         <a href="impressum.html">Impressum</a>

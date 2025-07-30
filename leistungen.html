@@ -33,15 +33,35 @@
         <div class="hero-overlay"></div>
 
         <div class="nav-inner">
-          <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
-          <nav>
-            <ul class="nav-links">
-              <li><a href="index.html" class="nav-btn">Startseite</a></li>
-              <li><a href="leistungen.html" class="nav-btn active">Leistungen</a></li>
-              <li><a href="uber-uns.html" class="nav-btn">Über uns</a></li>
-              <li><a href="kontakt.html" class="nav-btn">Kontakt</a></li>
+          <a href="index.html#top">
+            <img src="img/Mallonn_Dark/PNG_Web & Print/Mallonn_Hauptlogo_Dark.png.png" alt="Mallonn Logo" class="logo" />
+          </a>
+          
+          <!-- Desktop nav links (visible ≥ 993px) -->
+          <div class="nav-links">
+            <a href="index.html" class="nav-btn">Startseite</a>
+            <a href="leistungen.html" class="nav-btn">Leistungen</a>
+            <a href="uber-uns.html" class="nav-btn">Über uns</a>
+            <a href="kontakt.html" class="nav-btn">Kontakt</a>
+          </div>
+          
+          <!--Mobile hamburger-->
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        
+        </div>
+        
+        <div class="mobile-nav-overlay" id="mobileNav">
+          <div class="mobile-nav">
+            <ul>
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="leistungen.html">Leistungen</a></li>
+              <li><a href="uber-uns.html">Über uns</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
-          </nav>
+          </div>
+        </div>
         </div>
       
         <div class="hero-content">
@@ -213,7 +233,7 @@
             <p>
               Eine eigene <span style="color: red;">Terrasse</span>, ein <span style="color: red;">Balkon</span> oder eine <span style="color: red;">Dachterrasse</span> sind wunderbare Erweiterungen Ihres Zuhauses. Sie schaffen zusätzliche Freiflächen, die Sie zum Entspannen, Grillen, Sonnenbaden oder für gesellige Abende im Freien nutzen können.
               Mit einer individuell geplanten Terrasse, einem Balkon oder einer Dachterrasse erhöhen Sie nicht nur den <span style="color: red;">Wohnkomfort</span>, sondern auch den Wert Ihrer Immobilie. Besonders bei Dachterrassen profitieren Sie von einer exklusiven Aussicht und einer privaten Oase hoch über der Stadt oder im Grünen.
-              Ob aus Holz, Stein oder anderen hochwertigen Materialien – wir beraten Sie gern, um die perfekte Lösung für Ihren Stil und Ihre Bedürfnisse zu realisieren. Investieren Sie in eine Außenfläche, die Ihnen mehr Lebensqualität, schöne Momente und einen besonderen Ort der Entspannung bietet
+              Ob aus Holz, Stein oder anderen hochwertigen Materialien – wir beraten Sie gern, um die perfekte Lösung für Ihren Stil und Ihre Bedürfnisse zu realisieren. Investieren Sie in eine Außenfläche, die Ihnen mehr Lebensqualität, schöne Momente und einen besonderen Ort der Entspannung bietet.
               Gerne beraten wir Sie dabei, die perfekte Terrasse, den Balkon oder die Dachterrasse zu planen und umzusetzen.
             </p>
             <p>
@@ -296,8 +316,8 @@
         31832 Springe-Eldagsen
       </div>
       <div>
-        +49 (0)170 5781360<br>
-        info@dach-mallonn.de
+        <a href="tel:+491705781360" style="color: white; text-decoration: none;">+49 (0)170 5781360</a><br>
+        <a href="mailto:info@dach-mallonn.de" style="color: white; text-decoration: none;">info@dach-mallonn.de</a>
       </div>
       <div class="footer-links">
         <a href="impressum.html">Impressum</a>

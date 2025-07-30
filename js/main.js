@@ -1,31 +1,145 @@
 const BASE_URL = "https://dach-mallonn.de"; // Replace with your domain
 
-// Scroll-responsive header: dark background only on scroll up
-let lastScrollTop = 0;
-const header = document.querySelector(".main-header");
+/// Scroll-responsive header with dynamic mobile menu behavior
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+  const nav = document.querySelector(".nav-inner");
+  const header = document.querySelector(".main-header");
+  const body = document.body;
 
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  let lastScroll = 0;
+  let menuOpen = false;
+  let scrollCloseTimeout = null;
 
-  if (scrollTop > 20) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
+  /// Handles nav visibility and style based on scroll position and direction
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const headerHeight = header.offsetHeight;
+    const scrollingUp = scrollY < lastScroll;
+    const insideHeader = scrollY <= headerHeight;
+
+    // If menu is open: keep nav visible and schedule auto-close
+    if (menuOpen) {
+      if (scrollCloseTimeout) clearTimeout(scrollCloseTimeout);
+      scrollCloseTimeout = setTimeout(closeMenu, 3000); // close menu after 3s scroll
+      return;
+    }
+
+    // At top of page: transparent nav
+    if (scrollY === 0) {
+      nav.classList.remove("hide", "sticky-dark");
+      nav.style.backgroundColor = "transparent";
+    }
+    // Inside header section: dark sticky nav
+    else if (insideHeader) {
+      nav.classList.remove("hide");
+      nav.classList.add("sticky-dark");
+      nav.style.backgroundColor = "#2e2e2e";
+    }
+    // Beyond header: show on scroll up, hide on scroll down
+    else {
+      if (scrollingUp) {
+        nav.classList.remove("hide");
+        nav.classList.add("sticky-dark");
+        nav.style.backgroundColor = "#2e2e2e";
+      } else {
+        nav.classList.add("hide");
+      }
+    }
+
+    lastScroll = scrollY;
   }
 
-  if (scrollTop < lastScrollTop && scrollTop > 20) {
-    // Scrolling up
-    header.classList.add("scrolled-up");
-  } else {
-    header.classList.remove("scrolled-up");
+  /// Opens the mobile menu with dark background and disables nav hiding
+  function openMenu() {
+    menuOpen = true;
+    nav.classList.remove("hide");
+    nav.classList.add("sticky-dark");
+    nav.style.backgroundColor = "#2e2e2e";
+    nav.style.zIndex = "1006";
+
+    mobileNav.classList.add("active", "slide-down");
+    mobileNav.classList.remove("slide-up");
+
+    hamburger.classList.add("open");
+
+    // Scroll remains allowed — do NOT add body.no-scroll
   }
 
-  lastScrollTop = Math.max(0, scrollTop);
+  /// Closes the mobile menu with smooth animation and restores nav state
+  function closeMenu() {
+    if (!menuOpen) return;
+
+    mobileNav.classList.remove("slide-down");
+    mobileNav.classList.add("slide-up");
+
+    setTimeout(() => {
+      menuOpen = false;
+      mobileNav.classList.remove("active", "slide-up");
+      hamburger.classList.remove("open");
+      nav.style.zIndex = "10";
+      handleScroll(); // restore nav behavior after menu close
+    }, 400); // match animation duration
+  }
+
+  /// Toggles the mobile menu
+  function toggleMenu() {
+    menuOpen ? closeMenu() : openMenu();
+  }
+
+  /// Positions the mobile menu right below the fixed nav bar
+  function updateMobileNavOffset() {
+    mobileNav.style.top = `${nav.offsetHeight}px`;
+  }
+
+  /// Highlights current page in navigation
+  function setActiveNav() {
+    const path = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".nav-btn").forEach(link => {
+      const href = link.getAttribute("href");
+      link.classList.toggle("active", href === path);
+    });
+  }
+
+  /// Ensures clicking a menu item closes the mobile menu
+  function bindMenuLinkClicks() {
+    document.querySelectorAll(".mobile-nav a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+
+  // Bindings
+  hamburger.addEventListener("click", toggleMenu);
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", updateMobileNavOffset);
+
+  // Initialize
+  handleScroll();
+  updateMobileNavOffset();
+
+  // Dynamically pad header to prevent nav overlap on desktop
+  function adjustHeaderPadding() {
+    if (window.innerWidth >= 993 && nav && header) {
+      const navHeight = nav.offsetHeight;
+      header.style.paddingTop = `${navHeight}px`;
+    } else if (header) {
+      header.style.paddingTop = null;
+    }
+  }
+  window.addEventListener("resize", adjustHeaderPadding);
+
+  adjustHeaderPadding();
+  setActiveNav();
+  bindMenuLinkClicks();
+
+  window.addEventListener("resize", updateMobileNavOffset);
+  window.addEventListener("resize", adjustHeaderPadding); // 👈 also this line
+
 });
 
 
-
-// Mouse-driven hero overlay effect
+/// Mouse-driven hero overlay effect
 document.addEventListener('mousemove', function (e) {
   const overlay = document.getElementById('heroOverlay');
   if (!overlay) return;
@@ -43,10 +157,22 @@ document.addEventListener('mousemove', function (e) {
   `;
 });
 
-// Scroll responsive header over all the page
+/// Dynamically adjust navigation bar size to menue and screen
+function updateMobileMenuTopOffset() {
+  const navInner = document.querySelector('.nav-inner');
+  const mobileNav = document.getElementById('mobileNav');
+  if (navInner && mobileNav) {
+    const navHeight = navInner.offsetHeight;
+    mobileNav.style.top = `${navHeight}px`;
+  }
+}
+
+// Update on load & resize
+window.addEventListener('DOMContentLoaded', updateMobileMenuTopOffset);
+window.addEventListener('resize', updateMobileMenuTopOffset);
 
 
-// Dynamically set active nav link
+/// Dynamically set active nav link
 document.addEventListener("DOMContentLoaded", function () {
   const path = window.location.pathname.split("/").pop() || "index.html";
   const links = document.querySelectorAll(".nav-btn");
@@ -61,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Search function for index.html file
+/// Search function for index.html file
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("quickSearch");
   const button = document.getElementById("searchButton");
