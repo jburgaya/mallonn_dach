@@ -109,6 +109,18 @@ html {
     text-overflow: ellipsis;
   }
 
+  .eu-foerderung__layout {
+    max-width: 1200px;          /* remove the 100px bottleneck */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .eu-foerderung__content {
+    flex: 0 0 70%;
+  } 
+
   /* Kontakt box page only */
   .kontakt-box {
     display: flex;
